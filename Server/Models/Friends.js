@@ -1,25 +1,24 @@
 const mongoose = require('mongoose')
 
-const FriendsSchema = mongoose.Schema(
+const FriendsSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: [true, "Please enter your friends name"]
+            required: true
         },
         gender: {
             type: String,
-            required: true,
+            required: true
         },
         age: {
             type: Number,
-            required:true,
+            required:true
         },
         about: {
             type: String,
             required: true
         }
-    }
-)
+    })
 
 const FriendsModel = mongoose.model("friends", FriendsSchema)
 module.exports = FriendsModel;
