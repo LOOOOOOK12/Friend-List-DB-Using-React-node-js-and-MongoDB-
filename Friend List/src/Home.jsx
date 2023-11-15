@@ -1,28 +1,44 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Create from './Components/Create'
 import HomeStyles from './Styles/HomeStyles'
-
-
+import axios from 'axios'
 
 function Home() {
-    const [friends, setFriends] = useState([])
+    const [friend, setFriends] = useState([])
+
+    useEffect(()=>{
+        axios.get("http://localhost:3001")
+        .then(result => setFriends(result.data))
+        .catch(error => console.log(error))
+    },[])
 
     return (
         <HomeStyles>
             <h1>Friend List</h1>
         <Create/>
-        {
-            friends.length === 0 
-            ?
-            <div>
-                <h2>No Records</h2>
-            </div> :
-            friends.map(friend =>(
-                <div>
-                    {friend}
-                </div>
-            ))
-        }
+        <table>
+            <thead className='Thead'>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>About</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    friend.map((friends) =>{
+                    return<tr>
+                                <td>{friends.name}</td>
+                                <td>{friends.age}</td>
+                                <td>{friends.gender}</td>
+                                <td>{friends.about}</td>
+                                <td><button>Edit</button><button>Delete</button></td>
+                        </tr>
+                    })
+                }
+            </tbody>
+        </table>
         </HomeStyles>
     )
 }
