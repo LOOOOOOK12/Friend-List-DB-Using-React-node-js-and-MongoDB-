@@ -6,13 +6,15 @@ const HomeStyles = styled.div`
     flex-direction: column;
     align-items: center;
     background-color: #9191ff;
-    padding: 3rem;
-    border-radius: 2rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
 
     h1{
         margin-bottom: 2rem;
-    }
+    }  
 
-   
+    tr th{
+        margin: 3rem;
+    }
 `
 export default HomeStyles;
