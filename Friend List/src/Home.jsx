@@ -33,7 +33,10 @@ function Home() {
                                 <td>{friends.age}</td>
                                 <td>{friends.gender}</td>
                                 <td>{friends.about}</td>
-                                <td><button>Edit</button><button>Delete</button></td>
+                                <td>
+                                    <button className='Edit'>Edit</button>
+                                    <button className='Delete'>Delete</button>
+                                </td>
                         </tr>
                     })
                 }
