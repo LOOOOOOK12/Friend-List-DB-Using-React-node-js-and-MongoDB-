@@ -19,18 +19,23 @@ function Create() {
     return (
         <CreateStyles className='create-form'>
             <form onSubmit = {Submit}>
-                <label>Enter Name:</label>
-                <input type="text" onChange={(e)=> setName(e.target.value)}/>
-
-                <label>Enter Age:</label>
-                <input type="text" onChange={(e)=> setAge(e.target.value)}/>
-
-                <label>Enter Gender:</label>
-                <input type="text" onChange={(e)=> setGender(e.target.value)}/>
-
-                <label>About Your Friend:</label>
-                <input type="text" onChange={(e)=> setAbout(e.target.value)}/>
-
+                <div className='Label'>
+                    <label>Enter Name:</label>
+                    <input type="text" onChange={(e)=> setName(e.target.value)}/>
+                </div>
+                <div className='Label'>
+                    <label>Enter Age:</label>
+                    <input type="text" onChange={(e)=> setAge(e.target.value)}/>
+                </div>
+                <div className='Label'>
+                    <label>Enter Gender:</label>
+                    <input type="text" onChange={(e)=> setGender(e.target.value)}/>
+                </div>
+                <div className='Label'>
+                    <label>About Your Friend:</label>
+                    <input type="text" onChange={(e)=> setAbout(e.target.value)}/>
+                </div>
+                
                 <button type = "button "className="Submit">Add Friend</button>
             </form>
         </CreateStyles>
