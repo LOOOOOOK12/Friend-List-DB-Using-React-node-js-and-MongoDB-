@@ -4,6 +4,8 @@ const CreateStyles = styled.div`
 
     form{
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: .5rem;
         margin-bottom: 2rem;
     }
@@ -28,7 +30,7 @@ const CreateStyles = styled.div`
 
     .Submit{
         color: #f8f8f8;
-        padding: 0 1.5rem;
+        padding: .5rem 2rem;
         background: #00a400;
         border-radius: .4rem;
         border: transparent;
