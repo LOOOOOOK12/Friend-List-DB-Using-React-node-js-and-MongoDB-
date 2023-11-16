@@ -21,6 +21,13 @@ app.get('/',(req, res) => {
     .catch(err => res.json(err))
 })
 
+app.delete("/deleteFriend",(req, res) =>{
+    FriendsModel.deleteOne(req.body)
+    .then(friends => res.json(friends))
+    .catch(error => res.json(error))
+
+})
+
 
 app.listen(3001, () => {
     console.log("Server is Running")
