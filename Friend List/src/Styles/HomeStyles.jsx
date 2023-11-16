@@ -5,13 +5,17 @@ const HomeStyles = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #9191ff;
+    background-color: #7878ff;
     padding: 2rem;
     border-radius: 1.5rem;
 
     h1{
-        margin-bottom: 2rem;
+        margin-bottom: 1.3rem;
     }  
+
+    p{
+        margin-bottom: 1.5rem;
+    }
 
     table{
         text-align: left;
@@ -20,9 +24,9 @@ const HomeStyles = styled.div`
 
     .Edit{
         color: white;
-        background: #018501;
+        background: #00a400;
         padding: .5rem 1rem;
-        margin-right: 1rem;
+        margin-right: .5rem;
         border: 2px white none;
         border-radius: .4rem;
         transition: ease .2s;
@@ -34,7 +38,7 @@ const HomeStyles = styled.div`
 
     .Delete{
         color: white;
-        background: #ff2626;
+        background: #ff1f1f;
         padding: .5rem 1rem;
         margin-right: 1rem;
         border: 2px white none;
