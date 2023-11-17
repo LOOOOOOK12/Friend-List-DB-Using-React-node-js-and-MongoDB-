@@ -1,11 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import Create from './Components/Create'
 import HomeStyles from './Styles/HomeStyles'
+import {Modal} from './Components/Modal'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 
 function Home() {
     const [friend, setFriends] = useState([])
+    const [modalOpen, setModalOpen] = useState(false)
+
+    const handleButtonClick =() =>{
+        setModalOpen(false)
+    }
 
     const deleteFriend = (id) => {
         axios.delete('http://localhost:3001/deleteFriend/' + id)
@@ -43,7 +48,8 @@ function Home() {
                                 <td>{friends.gender}</td>
                                 <td>{friends.about}</td>
                                 <td>
-                                    <button className='Edit'>Edit</button>
+                                    <button className='Edit' onClick={() => setModalOpen(true)}>Edit</button>
+                                        {modalOpen && <Modal/>}
                                     <button className='Delete' onClick={(e) => deleteFriend(friends._id)}>Delete</button>
                                 </td>
                         </tr>
