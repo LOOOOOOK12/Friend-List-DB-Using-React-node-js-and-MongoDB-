@@ -5,22 +5,16 @@ import axios from 'axios'
 
 function Home() {
     const [friend, setFriends] = useState([])
-    
-
-    // function deleteFriend(){
-    //     alert("are you sure to remove your friend?");
-    // }
-
+     
     function editFriend(){
         alert("Edit")
     } 
     
-    const deleteFriend = async (e) => {
-        e.preventDefault();
-        axios.post("http://localhost:3001/deleteFriend", { name, age, gender, about })
-        .then(response => {
-            props.setFriends(prevState => [...prevState, response.data])
-        }).catch((error) => console.log(error))
+    const deleteFriend = (id) => {
+        axios.delete('http://localhost:3001/deleteFriend/' + id)
+        .then(res => {console.log(res)
+            window.location.reload()})
+        .catch(err => console.log(err))
     }
 
     useEffect(()=>{
@@ -53,7 +47,7 @@ function Home() {
                                 <td>{friends.about}</td>
                                 <td>
                                     <button className='Edit' onClick={editFriend}>Edit</button>
-                                    <button className='Delete' onClick={deleteFriend}>Delete</button>
+                                    <button className='Delete' onClick={(e) => deleteFriend(friends._id)}>Delete</button>
                                 </td>
                         </tr>
                     })
