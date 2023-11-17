@@ -5,7 +5,6 @@ const UpdateStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #aeaeff;
 
     form{
         color: #f7f7f7;
@@ -30,6 +29,20 @@ const UpdateStyles = styled.div`
 
     .update-Button:hover{
         background: #006700;
+    }
+
+    .cancel-Button{
+        color: white;
+        background: #ff2525;
+        padding: .5rem 1rem;
+        margin-right: .5rem;
+        border: 2px white none;
+        border-radius: .4rem;
+        transition: ease .2s;
+    }
+
+    .cancel-Button:hover{
+        background: #d10000;
     }
 
     input{
