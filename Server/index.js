@@ -21,9 +21,10 @@ app.get('/',(req, res) => {
     .catch(err => res.json(err))
 })
 
-app.delete("/deleteFriend",(req, res) =>{
-    FriendsModel.deleteOne(req.body)
-    .then(friends => res.json(friends))
+app.delete("/deleteFriend/:id",(req, res) =>{
+    const id = req.params.id;
+    FriendsModel.findByIdAndDelete({_id: id})
+    .then(res => res.json(res))
     .catch(error => res.json(error))
 
 })
