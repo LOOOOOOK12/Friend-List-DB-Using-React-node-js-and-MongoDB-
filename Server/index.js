@@ -21,6 +21,14 @@ app.get('/',(req, res) => {
     .catch(err => res.json(err))
 })
 
+//Pang Update ng friend
+app.get('/getFriends/:id', (req, res) =>{
+    const id = req.params.id;
+    FriendsModel.findById({_id:id})
+    .then(friends => res.json(friends))
+    .catch(err => res.json(err))
+})
+
 app.delete("/deleteFriend/:id",(req, res) =>{
     const id = req.params.id;
     FriendsModel.findByIdAndDelete({_id: id})
