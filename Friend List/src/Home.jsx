@@ -2,14 +2,11 @@ import React, {useEffect, useState} from 'react'
 import Create from './Components/Create'
 import HomeStyles from './Styles/HomeStyles'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 function Home() {
     const [friend, setFriends] = useState([])
-     
-    function editFriend(){
-        alert("Edit")
-    } 
-    
+
     const deleteFriend = (id) => {
         axios.delete('http://localhost:3001/deleteFriend/' + id)
         .then(res => {console.log(res)
@@ -27,7 +24,7 @@ function Home() {
         <HomeStyles>
             <h1>Friend List!!!</h1>
             <p>Add your friends here and never forget about them!!!</p>
-        <Create setFriends={setFriends}/>
+            <Create setFriends={setFriends}/>
         <table>
             <thead className='Thead'>
                 <tr>
@@ -40,13 +37,13 @@ function Home() {
             <tbody>
                 {
                     friend.map((friends) =>{
-                    return<tr>
+                    return<tr key ={friend._id}>
                                 <td>{friends.name}</td>
                                 <td>{friends.age}</td>
                                 <td>{friends.gender}</td>
                                 <td>{friends.about}</td>
                                 <td>
-                                    <button className='Edit' onClick={editFriend}>Edit</button>
+                                    <button className='Edit'>Edit</button>
                                     <button className='Delete' onClick={(e) => deleteFriend(friends._id)}>Delete</button>
                                 </td>
                         </tr>
