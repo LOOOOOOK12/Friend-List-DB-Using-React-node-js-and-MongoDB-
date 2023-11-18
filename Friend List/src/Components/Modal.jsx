@@ -32,12 +32,10 @@ export const Modal = ({ friend, onSubmit, onCancel }) => {
     const handleUpdate = () => {
         // Use axios to update the data
         axios
-        .get(`http://localhost:3001/getFriends/${friend._id}`, formData)
+        .put(`http://localhost:3001/updateFriend/${friend._id}`, formData)
         .then((res) => {
             console.log(res);
-            // Pass the updated friend data to the parent component (Home) to update the state
             onSubmit(formData);
-            // Close the modal
             onCancel();
         })
         .catch((err) => {
