@@ -29,6 +29,17 @@ app.get('/getFriends/:id', (req, res) =>{
     .catch(err => res.json(err))
 })
 
+app.put('/updateFriend/:id',(req, res) => {
+    const id = req.params.id;
+    FriendsModel.findByIdAndUpdate({_id: id},{
+        name: req.body.name,
+        gender: req.body.gender,
+        age: req.body.age,
+        about: req.body.about})
+    .then(friends => res.json(friends))
+    .catch(err => res.json(err))
+})
+
 app.delete("/deleteFriend/:id",(req, res) =>{
     const id = req.params.id;
     FriendsModel.findByIdAndDelete({_id: id})
