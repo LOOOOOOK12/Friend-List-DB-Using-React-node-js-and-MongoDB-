@@ -3,7 +3,7 @@ import UpdateStyles from '../Styles/UpdateStyles'
 import "../Styles/Modal.css"
 
 
-export const Modal = () => {
+export const Modal = ({onSubmit, onCancel}) => {
   return (
     <div className='modal-Container'>
         <div className="modal">
@@ -27,8 +27,8 @@ export const Modal = () => {
                     <input type="text" />
                     </div>
                     <div className='buttons'>
-                        <button className='update-Button'>Update</button>
-                        <button className='cancel-Button'>Cancel</button>
+                        <button className='update-Button' onClick={() => onSubmit()}>Update</button>
+                        <button className='cancel-Button' onClick={() => onCancel()}>Cancel</button>
                     </div>
                     
                 </form>
