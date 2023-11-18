@@ -49,7 +49,11 @@ function Home() {
                                 <td>{friends.about}</td>
                                 <td>
                                     <button className='Edit' onClick={() => setModalOpen(true)}>Edit</button>
-                                        {modalOpen && <Modal/>}
+                                        {modalOpen && 
+                                        <Modal 
+                                            onSubmit={handleButtonClick} 
+                                            onCancel={handleButtonClick}/>
+                                        }
                                     <button className='Delete' onClick={(e) => deleteFriend(friends._id)}>Delete</button>
                                 </td>
                         </tr>
