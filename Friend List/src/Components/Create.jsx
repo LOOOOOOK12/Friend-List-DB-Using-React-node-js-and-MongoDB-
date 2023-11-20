@@ -49,7 +49,7 @@ function Create(props) {
         <CreateStyles className="create-form">
         <form>
             <div className='Error'>
-                {error && <div style={{ color: 'red' }}>{error}</div>}
+                {error && <div style={{ color: '#fa2222' }}>{error}</div>}
             </div>
             <div className='Labels'>
                 <div className="Label">
