@@ -4,10 +4,18 @@ const CreateStyles = styled.div`
 
     form{
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: .5rem;
         margin-bottom: 2rem;
+    }
+
+    .Labels{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
     }
 
     .Label{
