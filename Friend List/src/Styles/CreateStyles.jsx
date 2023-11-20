@@ -43,7 +43,7 @@ const CreateStyles = styled.div`
         border-radius: .4rem;
         border: transparent;
         transition: ease .2s;
-        #ff3737
+        
     }
 
     .Submit:hover{
