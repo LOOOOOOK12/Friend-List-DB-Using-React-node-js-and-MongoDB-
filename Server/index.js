@@ -45,7 +45,6 @@ app.delete("/deleteFriend/:id",(req, res) =>{
     FriendsModel.findByIdAndDelete({_id: id})
     .then(res => res.json(res))
     .catch(error => res.json(error))
-
 })
 
 
