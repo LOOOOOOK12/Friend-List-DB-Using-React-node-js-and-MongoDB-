@@ -30,19 +30,31 @@ export const Modal = ({ friend, onSubmit, onCancel }) => {
     };
 
     const handleUpdate = () => {
-        // Check for empty inputs
+        
+        // kung warang laog gabos
         if (!formData.name || !formData.age || !formData.gender || !formData.about) {
             setError('All fields are required.');
             return;
         }
 
-        // Check if age contains only numbers
+        // kung may letter sa age
         if (!/^\d+$/.test(formData.age)) {
             setError('Age should contain only numbers.');
             return;
         }
 
-        // If all checks pass, clear error and proceed with the update
+        // kung su name may number
+        if (!/^[a-zA-Z]+$/.test(formData.name)) {
+            setError('name should contain only letters!');
+            return;
+            }
+        
+        //kung su gender may number 
+        if (!/^[a-zA-Z]+$/.test(formData.gender)) {
+            setError('Gender should contain only letters!');
+            return;
+            }   
+
         setError('');
 
         axios
