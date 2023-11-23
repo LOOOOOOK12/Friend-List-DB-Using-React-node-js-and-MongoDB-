@@ -7,7 +7,7 @@ const CreateStyles = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: .5rem;
+        gap: 1rem;
         margin-bottom: 2rem;
     }
 
