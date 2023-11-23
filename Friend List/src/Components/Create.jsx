@@ -13,18 +13,25 @@ function Create(props) {
         e.preventDefault();
 
         if (!name || !age || !gender || !about) {
-        setError('All fields are required.');
+        setError('All fields are required!');
         return;
         }
 
-        
+        // kung may letters sa numbers
         if (!/^\d+$/.test(age)) {
-            setError('Age should contain only numbers.');
+            setError('Age should contain only numbers!');
             return;
         }
 
-        if (!/^[a-zA-Z]+$/.test(age)) {
-            setError('age should contain only letters.');
+        // kung may numebers sa name
+        if (!/^[a-zA-Z]+$/.test(name)) {
+            setError('name should contain only letters!');
+            return;
+            }  
+
+        // kung may number sa gender
+        if (!/^[a-zA-Z]+$/.test(gender)) {
+            setError('Gender should contain only letters!');
             return;
             }   
         setError('');
