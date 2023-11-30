@@ -25,13 +25,12 @@ function Home() {
     };
 
     const handleModalSubmit = (updatedFriendData) => {
-        // Update the state with the edited friend data
+        
         setFriends((prevFriends) =>
             prevFriends.map((friend) =>
                 friend._id === selectedFriendId ? { ...friend, ...updatedFriendData } : friend
             )
             );
-            // Close the modal
             setModalOpen(false);
         };
     
@@ -84,6 +83,7 @@ function Home() {
             })}
             </tbody>
         </table>
+        
         </HomeStyles>
     );
     }
