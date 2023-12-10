@@ -44,10 +44,10 @@ export const Modal = ({ friend, onSubmit, onCancel }) => {
         }
 
         // kung su name may number
-        if (!/^[a-zA-Z]+$/.test(formData.name)) {
-            setError('name should contain only letters!');
+        if (!/^[a-zA-Z ]+$/.test(formData.name)) {
+            setError('Name should contain only letters and spaces!');
             return;
-            }
+        }
         
         //kung su gender may number 
         if (!/^[a-zA-Z]+$/.test(formData.gender)) {
