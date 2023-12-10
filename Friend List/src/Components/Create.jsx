@@ -24,10 +24,10 @@ function Create(props) {
         }
 
         // kung may numebers sa name
-        if (!/^[a-zA-Z]+$/.test(name)) {
-            setError('name should contain only letters!');
+        if (!/^[a-zA-Z ]+$/.test(name)) {
+            setError('Name should contain only letters and spaces!');
             return;
-            }  
+        }
 
         // kung may number sa gender
         if (!/^[a-zA-Z]+$/.test(gender)) {
