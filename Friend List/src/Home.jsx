@@ -5,6 +5,7 @@ import { Modal } from './Components/Modal';
 import axios from 'axios';
 
 function Home() {
+    
     const [friends, setFriends] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedFriendId, setSelectedFriendId] = useState(null);
